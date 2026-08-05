@@ -1,0 +1,20 @@
+{
+  "name": "coding-practice",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A collection of general programming practice problems",
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watchAll",
+    "lint": "eslint problems tests",
+    "lint:fix": "eslint problems tests --fix",
+    "format": "prettier --write \"problems/**/*.js\" \"tests/**/*.js\""
+  },
+  "devDependencies": {
+    "eslint": "^8.57.1",
+    "eslint-config-prettier": "^9.1.2",
+    "eslint-plugin-jest": "^27.9.0",
+    "jest": "^29.7.0",
+    "prettier": "^3.9.6"
+  }
+}
