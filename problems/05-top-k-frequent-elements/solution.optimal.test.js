@@ -1,4 +1,4 @@
-const { topKFrequent } = require('./solution');
+const { topKFrequent } = require('./solution.optimal');
 const { validateTopKFrequent, generateRandomCases } = require('./testUtils');
 
 function sorted(arr) {
@@ -35,16 +35,8 @@ test('every element ties on frequency (ambiguous answer, validated by invariant)
   expect(validateTopKFrequent(nums, 2, result)).toEqual([]);
 });
 
-// --- Randomized (property-based) testing ---
-//
-// Because ties at the k-th frequency boundary make the "correct" output
-// non-unique, random cases are checked against a validator (see
-// testUtils.js) rather than a single reference answer: it confirms the
-// result has the right length, no duplicates, every element actually
-// appears in nums, and no excluded element has strictly higher frequency
-// than the least-frequent included one. A fixed seed keeps cases
-// reproducible across runs.
-
+// Same seed as solution.test.js, so both implementations face the exact
+// same 100 randomly generated (nums, k) cases.
 const randomCases = generateRandomCases(42, 100);
 
 test.each(randomCases)('random case %#: nums=%j k=%j', (nums, k) => {

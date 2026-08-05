@@ -1,4 +1,4 @@
-const { numIslands } = require('./solution');
+const { numIslands } = require('./solution.optimal');
 const { cloneGrid, numIslandsReference, generateRandomCases } = require('./testUtils');
 
 test('example 1', () => {
@@ -61,14 +61,8 @@ test('non-square grid with an irregular island shape', () => {
   expect(numIslands(grid)).toBe(2);
 });
 
-// --- Randomized (property-based) testing ---
-//
-// Generates many random grids and checks numIslands against an
-// independently written BFS reference. Grids are cloned before each call
-// in case a solution mutates the grid in place (a common flood-fill
-// technique), so neither call can affect the other. A fixed seed keeps
-// the cases reproducible across runs.
-
+// Same seed as solution.test.js, so both implementations face the exact
+// same 60 randomly generated grids.
 const randomCases = generateRandomCases(42, 60);
 
 test.each(randomCases)('random case %#: %j', (grid) => {

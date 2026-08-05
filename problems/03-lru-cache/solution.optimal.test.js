@@ -1,4 +1,4 @@
-const { LRUCache } = require('./solution');
+const { LRUCache } = require('./solution.optimal');
 const { ReferenceLRUCache, generateRandomOperationSequences } = require('./testUtils');
 
 test('example from prompt', () => {
@@ -59,15 +59,8 @@ test('putting an existing key does not change capacity usage', () => {
   expect(cache.get(2)).toBe(2);
 });
 
-// --- Randomized (property-based) testing ---
-//
-// Runs many random sequences of get/put operations against both the
-// solution under test and an independent, deliberately simple reference
-// LRU cache, asserting every get() call returns the same value from
-// both. This exercises eviction order and recency-refresh behavior far
-// more thoroughly than a handful of hand-written scenarios could. A fixed
-// seed keeps sequences reproducible across runs.
-
+// Same seed as solution.test.js, so both implementations face the exact
+// same 30 randomly generated operation sequences.
 const randomSequences = generateRandomOperationSequences(42, 30, 40);
 
 test.each(randomSequences)(
