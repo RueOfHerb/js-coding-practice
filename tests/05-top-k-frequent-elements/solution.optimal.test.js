@@ -1,4 +1,4 @@
-const { topKFrequent } = require('./solution.optimal');
+const { topKFrequent } = require('../../problems/05-top-k-frequent-elements/solution.optimal');
 const { validateTopKFrequent, generateRandomCases } = require('./testUtils');
 
 function sorted(arr) {

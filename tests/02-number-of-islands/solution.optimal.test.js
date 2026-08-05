@@ -1,4 +1,4 @@
-const { numIslands } = require('./solution.optimal');
+const { numIslands } = require('../../problems/02-number-of-islands/solution.optimal');
 const { cloneGrid, numIslandsReference, generateRandomCases } = require('./testUtils');
 
 test('example 1', () => {

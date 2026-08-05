@@ -1,4 +1,4 @@
-const { LRUCache } = require('./solution');
+const { LRUCache } = require('../../problems/03-lru-cache/solution');
 const { ReferenceLRUCache, generateRandomOperationSequences } = require('./testUtils');
 
 test('example from prompt', () => {

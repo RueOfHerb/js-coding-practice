@@ -1,4 +1,4 @@
-const { canFinish } = require('./solution.optimal');
+const { canFinish } = require('../../problems/06-course-schedule/solution');
 const { clonePrerequisites, canFinishReference, generateRandomCases } = require('./testUtils');
 
 test('example 1 - possible', () => {
@@ -67,8 +67,14 @@ test('disconnected components, one of which has a cycle', () => {
   ).toBe(false);
 });
 
-// Same seed as solution.test.js, so both implementations face the exact
-// same 100 randomly generated course graphs.
+// --- Randomized (property-based) testing ---
+//
+// Generates many random course graphs (a mix of guaranteed-acyclic,
+// guaranteed-cyclic, and fully random edge sets) and checks canFinish
+// against an independently written DFS cycle-detection reference.
+// Prerequisite lists are cloned before each call in case a solution
+// mutates its input. A fixed seed keeps cases reproducible across runs.
+
 const randomCases = generateRandomCases(42, 100);
 
 test.each(randomCases)(

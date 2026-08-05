@@ -1,4 +1,4 @@
-const { subarraySum } = require('./solution.optimal');
+const { subarraySum } = require('../../problems/01-subarray-sum-equals-k/solution.optimal');
 const { generateRandomCases, bruteForceSubarraySum } = require('./testUtils');
 
 test('example 1', () => {

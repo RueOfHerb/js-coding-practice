@@ -1,4 +1,4 @@
-const { merge } = require('./solution.optimal');
+const { merge } = require('../../problems/04-merge-intervals/solution');
 const { cloneIntervals, normalize, mergeReference, generateRandomCases } = require('./testUtils');
 
 test('example 1', () => {
@@ -100,8 +100,16 @@ test('negative coordinates', () => {
   ).toEqual([[-5, 2]]);
 });
 
-// Same seed as solution.test.js, so both implementations face the exact
-// same 80 randomly generated interval lists.
+// --- Randomized (property-based) testing ---
+//
+// Generates many random interval lists and checks merge() against an
+// independently written sort + linear-scan reference. Results are
+// normalized (sorted by [start, end]) before comparing, since an
+// implementation isn't required to emit merged intervals in any
+// particular order, only to produce the same set. Intervals are cloned
+// before each call in case a solution mutates its input in place. A
+// fixed seed keeps the cases reproducible across runs.
+
 const randomCases = generateRandomCases(42, 80);
 
 test.each(randomCases)('random case %#: %j', (intervals) => {
