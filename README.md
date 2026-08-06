@@ -7,6 +7,9 @@ full test suite to check your work and an answer key to fall back on when you're
 > My own in-progress solutions live on the [`rue-answers`](../../tree/rue-answers) branch, kept
 > separate from `master` so this branch stays a clean, unsolved template.
 
+> **Demo:** [20 Coding Problem Animations](https://claude.ai/code/artifact/38c0d819-5332-473a-8b3d-5ed6a45b525e) —
+> an interactive, steppable basic-vs-optimal walkthrough for every problem in this repo.
+
 ## How it's organized
 
 ```
