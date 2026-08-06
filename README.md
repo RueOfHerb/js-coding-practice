@@ -4,6 +4,9 @@ A set of 20 JavaScript coding problems for general programming practice. Each pr
 gives you two chances to solve it — a straightforward approach and a more optimal one — with a
 full test suite to check your work and an answer key to fall back on when you're stuck.
 
+> My own in-progress solutions live on the [`rue-answers`](../../tree/rue-answers) branch, kept
+> separate from `master` so this branch stays a clean, unsolved template.
+
 ## How it's organized
 
 ```
